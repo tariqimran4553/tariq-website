@@ -3,235 +3,191 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tariq Imran | Software Architect</title>
+  <title>Tariq Imran | Software Developer</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
     :root {
-      --bg-dark: #080a10;
+      --bg-dark: #05070a;
       --primary: #00f2fe;
       --secondary: #7000ff;
       --accent: #00ff88;
-      --glass: rgba(255, 255, 255, 0.03);
+      --glass: rgba(255, 255, 255, 0.05);
     }
 
-    * { box-sizing: border-box; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Outfit', sans-serif;
       background-color: var(--bg-dark);
       color: #fff;
-      overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    /* Floating Particles Background Effect */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at 50% 50%, #1a1e2e 0%, #080a10 100%);
-      z-index: -1;
-    }
-
-    /* Hero Section */
+    /* Modern Glass Header */
     header {
-      height: 70vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      padding: 80px 20px;
       text-align: center;
-      padding: 20px;
-      background: linear-gradient(to bottom, rgba(0,242,254,0.05), transparent);
-    }
-
-    .profile-container {
-      position: relative;
-      margin-bottom: 20px;
+      background: radial-gradient(circle at top, rgba(0,242,254,0.1), transparent);
     }
 
     .profile-img {
-      width: 160px;
-      height: 160px;
-      border-radius: 40px;
-      object-fit: cover;
-      border: 2px solid var(--primary);
-      box-shadow: 0 0 30px rgba(0, 242, 254, 0.2);
-    }
-
-    .status-badge {
-      position: absolute;
-      bottom: -10px;
-      right: -10px;
-      background: var(--accent);
-      color: #000;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+      width: 140px;
+      height: 140px;
+      border-radius: 35px;
+      border: 3px solid var(--primary);
+      box-shadow: 0 15px 35px rgba(0, 242, 254, 0.2);
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-size: 3rem;
       margin: 10px 0;
-      font-weight: 900;
-      background: linear-gradient(90deg, #fff, var(--primary), var(--secondary));
+      background: linear-gradient(to right, #fff, var(--primary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: -1px;
+      font-weight: 900;
     }
 
-    /* Cards Layout */
     .container {
-      max-width: 1100px;
-      margin: -100px auto 50px;
-      padding: 0 20px;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
     }
 
     .card {
       background: var(--glass);
-      backdrop-filter: blur(25px);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 32px;
-      padding: 40px;
-      margin-bottom: 30px;
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 25px;
+      padding: 30px;
+      margin-bottom: 25px;
     }
 
-    /* APK Download Component */
-    .download-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
+    /* App Download Section */
+    .app-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
       align-items: center;
     }
 
-    @media (max-width: 768px) { .download-grid { grid-template-columns: 1fr; } }
-
-    .apk-card {
-      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
-      border-radius: 24px;
-      padding: 25px;
+    .app-info { flex: 1; min-width: 280px; }
+    .app-download-box {
+      flex: 1;
+      min-width: 280px;
       text-align: center;
-      border: 1px solid rgba(0,242,254,0.2);
+      background: rgba(0,0,0,0.3);
+      padding: 25px;
+      border-radius: 20px;
+      border: 1px dashed var(--accent);
     }
 
-    .app-icon {
-      font-size: 4rem;
+    .hash-box {
+      background: #000;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.6rem;
       color: var(--primary);
-      margin-bottom: 15px;
-      filter: drop-shadow(0 0 10px var(--primary));
+      word-break: break-all;
+      font-family: monospace;
+      margin-top: 15px;
+      border: 1px solid rgba(0,242,254,0.1);
     }
 
     .btn-download {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      background: var(--primary);
+      gap: 10px;
+      background: var(--accent);
       color: #000;
-      padding: 20px;
-      border-radius: 20px;
+      padding: 18px;
+      border-radius: 15px;
       text-decoration: none;
-      font-weight: 900;
-      font-size: 1.2rem;
-      margin-top: 20px;
-      box-shadow: 0 15px 30px rgba(0, 242, 254, 0.3);
+      font-weight: 800;
+      font-size: 1.1rem;
+      margin-top: 15px;
+      transition: 0.3s;
     }
 
     .btn-download:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 242, 254, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 255, 136, 0.4);
     }
 
-    /* Skills */
-    .tech-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+    .badge {
+      display: inline-block;
+      padding: 5px 12px;
       background: rgba(255,255,255,0.05);
-      padding: 10px 20px;
-      border-radius: 15px;
-      margin: 5px;
-      font-weight: 500;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      margin-right: 5px;
       border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .tech-pill i { color: var(--primary); }
-
     footer {
       text-align: center;
-      padding: 80px 20px;
+      padding: 40px;
       opacity: 0.5;
-      font-size: 0.9rem;
     }
-
   </style>
 </head>
 <body>
 
 <header>
-  <div class="profile-container">
-    <img src="profile.jpg" alt="Tariq Imran" class="profile-img">
-    <div class="status-badge">Available for Work</div>
-  </div>
+  <img src="profile.jpg" alt="Tariq Imran" class="profile-img">
   <h1>Tariq Imran</h1>
-  <p style="font-size: 1.2rem; opacity: 0.7;">Full-Stack Developer • Python Expert • Android Specialist</p>
+  <p>Software Developer | Android & Flutter Expert</p>
 </header>
 
 <div class="container">
   
   <div class="card">
-    <div class="download-grid">
-      <div>
-        <h2 style="font-size: 2rem; margin-top: 0;">My Smart Software</h2>
-        <p style="opacity: 0.8; font-size: 1.1rem;">
-          A premium Android utility tool designed for speed and productivity. 
-          Includes advanced media controls, a smart calendar, and a professional calculator.
-        </p>
-        <div style="margin-top: 20px;">
-          <div class="tech-pill"><i class="fas fa-check"></i> Ad-Free</div>
-          <div class="tech-pill"><i class="fas fa-check"></i> 4K Ready</div>
-          <div class="tech-pill"><i class="fas fa-check"></i> Lightweight</div>
+    <div class="app-section">
+      <div class="app-info">
+        <h2 style="color: var(--primary); margin-top: 0;"><i class="fas fa-play-circle"></i> Tariq Media Player</h2>
+        <p>A high-performance media player for Android designed for seamless 4K playback and advanced audio controls.</p>
+        <div style="margin-top: 10px;">
+          <span class="badge"><i class="fab fa-android"></i> APK</span>
+          <span class="badge"><i class="fas fa-check-circle"></i> v1.0.0</span>
+          <span class="badge"><i class="fas fa-shield-alt"></i> Verified</span>
+        </div>
+        <div class="hash-box">
+          <strong>SHA256:</strong> 68cac85c23e35db979575de87702819db715622fcb475330a090815eaccf6810
         </div>
       </div>
 
-      <div class="apk-card">
-        <div class="app-icon"><i class="fas fa-mobile-screen-button"></i></div>
-        <h3>TariqUtility_v1.0.apk</h3>
-        <p style="font-size: 0.8rem; opacity: 0.6;">Size: 24.5 MB | Updated: 2026</p>
+      <div class="app-download-box">
+        <i class="fab fa-github" style="font-size: 2.5rem; margin-bottom: 10px;"></i>
+        <h4 style="margin: 0;">GitHub Release</h4>
+        <p style="font-size: 0.8rem; opacity: 0.7;">Secure & Direct Download</p>
         
-        <a href="APNA_GOOGLE_DRIVE_LINK_YAHAN_PASTE_KAREIN" class="btn-download">
-          <i class="fab fa-android"></i> DOWNLOAD NOW
+        <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v1.0.0/tariq_media_player.apk" class="btn-download">
+          <i class="fas fa-download"></i> DOWNLOAD APK
         </a>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <h2 style="text-align: center; margin-bottom: 30px;">Professional Stack</h2>
-    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-      <div class="tech-pill"><i class="fab fa-python"></i> Python</div>
-      <div class="tech-pill"><i class="fab fa-android"></i> Android Native</div>
-      <div class="tech-pill"><i class="fas fa-bolt"></i> Flutter</div>
-      <div class="tech-pill"><i class="fas fa-database"></i> Firebase</div>
-      <div class="tech-pill"><i class="fab fa-github"></i> Version Control</div>
-      <div class="tech-pill"><i class="fas fa-code"></i> C++ / Java</div>
+    <h3><i class="fas fa-code"></i> Tech Stack</h3>
+    <p>I build robust applications using modern technologies:</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+      <span class="badge">Python</span>
+      <span class="badge">Android Studio</span>
+      <span class="badge">Flutter</span>
+      <span class="badge">Firebase</span>
+      <span class="badge">Git & GitHub</span>
     </div>
   </div>
 
 </div>
 
 <footer>
-  <div style="margin-bottom: 30px;">
-    <a href="#" style="color:#fff; font-size: 1.5rem; margin: 0 20px;"><i class="fab fa-github"></i></a>
-    <a href="#" style="color:#fff; font-size: 1.5rem; margin: 0 20px;"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:tariq@example.com" style="color:#fff; font-size: 1.5rem; margin: 0 20px;"><i class="fas fa-envelope"></i></a>
-  </div>
-  <p>© 2026 Tariq Imran. All rights reserved.</p>
+  <p>© 2026 Tariq Imran. Built with Passion. Hosted on Vercel.</p>
 </footer>
 
 </body>
