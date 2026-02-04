@@ -14,7 +14,7 @@
       --primary: #00f2fe;
       --accent: #00ff88;
       --gold: #ffd700;
-      --yt-red: #ff0000;
+      --linkedin: #0077b5;
       --glass: rgba(0, 242, 254, 0.05);
     }
 
@@ -49,7 +49,7 @@
         border-bottom: 1px solid rgba(0, 242, 254, 0.2); display: block; width: fit-content; margin-inline: auto; padding-bottom: 10px;
     }
 
-    /* --- SOFTWARE GRID --- */
+    /* --- GRID SYSTEM --- */
     .container { max-width: 1200px; margin: auto; padding: 0 20px 100px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 
@@ -66,18 +66,7 @@
     }
     .btn.rufus { background: var(--gold); }
     .btn.urdu { background: var(--accent); }
-
-    /* --- YOUTUBE DEDICATED SECTION --- */
-    .youtube-section {
-        max-width: 900px; margin: 40px auto; background: rgba(255, 0, 0, 0.02);
-        border: 1px solid rgba(255, 0, 0, 0.2); border-radius: 20px; padding: 30px;
-        text-align: center; backdrop-filter: blur(10px);
-    }
-    .yt-container {
-        position: relative; width: 100%; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-        height: 0; overflow: hidden; border-radius: 10px; border: 2px solid #333; margin-top: 20px;
-    }
-    .yt-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .btn.linkedin { background: var(--linkedin); color: #fff; }
 
     .terminal-window {
       position: fixed; bottom: 20px; right: 20px; width: 300px; height: 150px;
@@ -117,13 +106,13 @@
   <div class="grid">
     <div class="cyber-card">
       <h3 style="color: var(--gold);"><i class="fas fa-compact-disc"></i> Rufus 4.6</h3>
-      <p style="opacity: 0.7; font-size: 0.8rem;">Official bootable USB creator. Stable build from v3.tk release.</p>
+      <p style="opacity: 0.7; font-size: 0.8rem;">Official bootable USB creator. Stable build from v3.tk release branch.</p>
       <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v3.tk/rufus-4.6.exe" class="btn rufus">DOWNLOAD EXE</a>
     </div>
 
     <div class="cyber-card">
       <h3 style="color: var(--accent);"><i class="fas fa-keyboard"></i> CRULP Urdu v1.1</h3>
-      <p style="opacity: 0.7; font-size: 0.8rem;">CRULP_Urdu_Phonetic_kb_v1.1.7z - Release v3.tk asset.</p>
+      <p style="opacity: 0.7; font-size: 0.8rem;">CRULP_Urdu_Phonetic_kb_v1.1.7z - Standard Urdu layout module.</p>
       <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v3.tk/CRULP_Urdu_Phonetic_kb_v1.1.7z" class="btn urdu">GET 7Z SETUP</a>
     </div>
 
@@ -134,21 +123,21 @@
     </div>
   </div>
 
-  <span class="section-title">Media_Broadcasting</span>
-  <div class="youtube-section">
-      <h2 style="color: var(--yt-red); margin: 0;"><i class="fab fa-youtube"></i> YouTube Lab</h2>
-      <p style="opacity: 0.6; font-size: 0.9rem;">Professional Tutorials & Project Showcases</p>
-      <div class="yt-container">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
+  <span class="section-title">Network_Connect</span>
+  <div class="grid" style="justify-content: center;">
+    <div class="cyber-card" style="max-width: 400px; margin: auto; text-align: center;">
+      <h3 style="color: var(--linkedin);"><i class="fab fa-linkedin"></i> LinkedIn Profile</h3>
+      <p style="opacity: 0.7; font-size: 0.8rem;">Connect with Tariq Imran for professional inquiries and system development projects.</p>
+      <a href="https://www.linkedin.com/in/tariq-imran-8966b6310" target="_blank" class="btn linkedin">OPEN LINKEDIN</a>
+    </div>
   </div>
 
 </div>
 
 <div class="terminal-window" id="term">
   > Booting Systems v2.1.0...<br>
-  > Releases: Synchronized.<br>
-  > YouTube Section: Dedicated.<br>
+  > YouTube Module: Purged.<br>
+  > LinkedIn Protocol: Active.<br>
   > Status: Alhumdulillah.
 </div>
 
