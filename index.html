@@ -13,7 +13,6 @@
       --bg: #000205;
       --primary: #00f2fe;
       --accent: #00ff88;
-      --danger: #ff2d75;
       --gold: #ffd700;
       --glass: rgba(0, 242, 254, 0.03);
     }
@@ -23,67 +22,57 @@
 
     canvas#galaxy { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.6; }
 
-    /* --- CYBER TOP BAR --- */
+    /* --- TOP BAR --- */
     .top-bar {
       position: fixed; top: 0; width: 100%; height: 60px;
       background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--primary);
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 30px; z-index: 1000; font-family: 'Fira Code'; font-size: 0.7rem;
     }
-    .main-ico { width: 35px; height: 35px; border-radius: 4px; object-fit: contain; margin-right: 10px; border: 1px solid var(--primary); }
+    .main-ico { width: 35px; height: 35px; border-radius: 4px; border: 1px solid var(--primary); margin-right: 10px; }
 
-    /* --- ISLAMIC SECTION --- */
+    /* --- ISLAMIC HEADER --- */
     .islamic-header {
       margin-top: 100px; text-align: center; padding: 25px;
-      background: linear-gradient(to bottom, rgba(255,215,0,0.05), transparent);
       border-bottom: 1px solid rgba(255, 215, 0, 0.1);
     }
-    .ayat { font-family: 'Amiri', serif; font-size: 2rem; color: var(--gold); margin-bottom: 5px; }
-    .terjma { font-size: 1rem; opacity: 0.8; font-style: italic; color: #fff; }
+    .ayat { font-family: 'Amiri', serif; font-size: 2rem; color: var(--gold); }
+    .terjma { font-size: 1rem; opacity: 0.8; font-style: italic; }
 
-    /* --- PROFILE HEADER --- */
+    /* --- PROFILE --- */
     header { padding: 40px 20px; text-align: center; }
     .neon-circle {
-      width: 180px; height: 180px; margin: auto; border-radius: 50%;
-      position: relative; display: flex; align-items: center; justify-content: center;
-      background: #000; box-shadow: 0 0 50px var(--primary), inset 0 0 20px var(--primary);
+      width: 170px; height: 170px; margin: auto; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: #000; box-shadow: 0 0 40px var(--primary);
       animation: pulse 2s infinite alternate;
     }
-    .profile-img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg); }
-    @keyframes pulse { from { transform: scale(1); box-shadow: 0 0 30px var(--primary); } to { transform: scale(1.05); box-shadow: 0 0 60px var(--accent); } }
+    .profile-img { width: 155px; height: 155px; border-radius: 50%; object-fit: cover; }
+    @keyframes pulse { from { box-shadow: 0 0 20px var(--primary); } to { box-shadow: 0 0 50px var(--accent); } }
 
-    /* --- HADEES BOX --- */
-    .hadees-box {
-        max-width: 700px; margin: 30px auto; padding: 20px;
-        border-right: 3px solid var(--accent); border-left: 3px solid var(--accent); 
-        background: rgba(0, 255, 136, 0.03);
-        font-family: 'Amiri', serif; font-size: 1.4rem; border-radius: 15px;
-    }
-
-    /* --- MAIN GRID --- */
-    .container { max-width: 1200px; margin: auto; padding: 20px 20px 150px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    /* --- GRID --- */
+    .container { max-width: 1200px; margin: auto; padding: 20px 20px 100px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 
     .cyber-card {
       background: var(--glass); border: 1px solid rgba(0, 242, 254, 0.1);
-      border-radius: 10px; padding: 25px; position: relative;
-      transition: 0.3s; backdrop-filter: blur(10px); overflow: hidden;
+      border-radius: 12px; padding: 25px; transition: 0.3s; backdrop-filter: blur(10px);
     }
     .cyber-card:hover { border-color: var(--primary); transform: translateY(-5px); }
 
     .btn {
       display: flex; align-items: center; justify-content: center; gap: 8px;
       width: 100%; padding: 12px; background: var(--primary); color: #000;
-      text-decoration: none; border-radius: 5px; font-weight: 900; margin-top: 15px; transition: 0.3s; font-size: 0.75rem;
+      text-decoration: none; border-radius: 5px; font-weight: 900; margin-top: 15px; font-size: 0.75rem;
     }
-    .btn:hover { background: var(--accent); box-shadow: 0 0 20px var(--accent); }
+    .btn.rufus { background: var(--gold); }
+    .btn.urdu { background: var(--accent); }
 
-    /* --- TERMINAL --- */
     .terminal-window {
-      position: fixed; bottom: 20px; right: 20px; width: 320px; height: 180px;
+      position: fixed; bottom: 20px; right: 20px; width: 300px; height: 150px;
       background: rgba(0,0,0,0.9); border: 1px solid var(--accent);
       border-radius: 10px; padding: 15px; font-family: 'Fira Code'; font-size: 0.65rem;
-      color: var(--accent); overflow: hidden; pointer-events: none; z-index: 1001;
+      color: var(--accent); overflow: hidden; pointer-events: none;
     }
   </style>
 </head>
@@ -94,72 +83,50 @@
 <div class="top-bar">
   <div style="display: flex; align-items: center;">
     <img src="ico.png" alt="Icon" class="main-ico">
-    <span>TARIQ_ALPHA // V2.0.0_ACTIVE</span>
+    <span>TARIQ_IMRAN // V2.0.0</span>
   </div>
   <div id="clock">00:00:00</div>
-  <div style="color: var(--accent);"><i class="fas fa-microchip"></i> KERNEL_LOADED</div>
 </div>
 
 <div class="islamic-header">
     <div class="ayat">إِنَّ ٱللَّهَ مَعَ ٱلصَّـٰبِرِينَ</div>
-    <div class="terjma">"Beshak Allah Sabr karne walon ke saath hai." (Surah Al-Baqarah: 153)</div>
+    <div class="terjma">"Beshak Allah Sabr karne walon ke saath hai."</div>
 </div>
 
 <header>
   <div class="neon-circle">
     <img src="profile.jpg" alt="Tariq Imran" class="profile-img">
   </div>
-  <h1 style="font-size: 4.5rem; letter-spacing: -5px; margin: 30px 0 10px; color: #fff;">TARIQ IMRAN</h1>
-  <p style="letter-spacing: 8px; color: var(--primary); font-weight: bold; font-size: 0.9rem;">[ FULL-STACK SYSTEMS DEVELOPER ]</p>
-  
-  <div class="hadees-box">
-    "انما الاعمال بالنیات" <br>
-    <span style="font-size: 1rem; font-family: 'Space Grotesk'; opacity: 0.9;">"Amal ka daromadar niyyat par hai." (Sahih Bukhari)</span>
-  </div>
+  <h1 style="font-size: 3.5rem; letter-spacing: -3px; margin: 20px 0 5px;">TARIQ IMRAN</h1>
+  <p style="color: var(--primary); letter-spacing: 5px; font-size: 0.8rem;">[ SYSTEMS DEVELOPER ]</p>
 </header>
 
 <div class="container">
   <div class="grid">
     <div class="cyber-card">
-      <h3 style="color: var(--accent);"><i class="fas fa-keyboard"></i> Urdu Phonetic v1.1</h3>
-      <p style="opacity: 0.7; font-size: 0.8rem;">CRULP_Urdu_Phonetic_kb_v1.1 - The standard system-level Urdu typing module.</p>
-      <a href="#" class="btn" style="background: var(--accent); color: #000;">DOWNLOAD SETUP</a>
+      <h3 style="color: var(--gold);"><i class="fas fa-compact-disc"></i> Rufus 4.6</h3>
+      <p style="opacity: 0.7; font-size: 0.8rem;">Create bootable USB drives easily. Latest stable version 4.6.</p>
+      <a href="https://rufus.ie/downloads/rufus-4.6.exe" class="btn rufus">DOWNLOAD RUFUS 4.6</a>
     </div>
 
     <div class="cyber-card">
-      <h3 style="color: var(--gold);"><i class="fas fa-compact-disc"></i> Rufus 4.6</h3>
-      <p style="opacity: 0.7; font-size: 0.8rem;">Fastest way to create bootable USB drives. Fully UEFI supported engine.</p>
-      <a href="https://github.com/pbatard/rufus/releases/download/v4.6/rufus-4.6.exe" class="btn" style="background: var(--gold);">DOWNLOAD Rufus 4.6</a>
+      <h3 style="color: var(--accent);"><i class="fas fa-keyboard"></i> CRULP Urdu v1.1</h3>
+      <p style="opacity: 0.7; font-size: 0.8rem;">CRULP_Urdu_Phonetic_kb_v1.1 Setup for system-wide Urdu support.</p>
+      <a href="#" class="btn urdu">DOWNLOAD KEYBOARD</a>
     </div>
 
     <div class="cyber-card">
       <h3 style="color: var(--primary);"><i class="fas fa-play"></i> Media Engine UHD</h3>
-      <p style="opacity: 0.7; font-size: 0.8rem;">Custom NDK renderer for high-performance 4K video playback on mobile systems.</p>
+      <p style="opacity: 0.7; font-size: 0.8rem;">High-performance NDK video renderer for Android systems.</p>
       <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v1.0.0/tariq_media_player.apk" class="btn">DOWNLOAD APK</a>
     </div>
-    
-    <div class="cyber-card">
-      <h3 style="color: #fff;"><i class="fas fa-fingerprint"></i> Vault Cipher</h3>
-      <p style="opacity: 0.7; font-size: 0.8rem;">Advanced 4096-bit RSA encryption engine for secure system file storage.</p>
-      <a href="#" class="btn" style="background: transparent; border: 1px solid #fff; color: #fff;">SECURE ACCESS</a>
-    </div>
-  </div>
-
-  <div class="contact-ui">
-    <h2 style="letter-spacing: 10px;">GMAIL_RELAY</h2>
-    <p style="opacity: 0.5; font-size: 0.8rem; margin-bottom: 20px;">tariqimran4553@gmail.com</p>
-    <form action="mailto:tariqimran4553@gmail.com" method="post" enctype="text-plain">
-      <input type="text" name="ID" placeholder="SENDER_ID" required style="width: 100%; background: #000; border: 1px solid #333; padding: 15px; margin-bottom: 10px; color: var(--primary);">
-      <textarea name="DATA" rows="4" placeholder="MESSAGE" style="width: 100%; background: #000; border: 1px solid #333; padding: 15px; color: var(--primary);"></textarea>
-      <button type="submit" class="btn" style="background: var(--accent); border: none;">TRANSMIT SIGNAL</button>
-    </form>
   </div>
 </div>
 
 <div class="terminal-window" id="term">
-  > Booting Tariq_Kernel v2.0.0...<br>
-  > Syncing CRULP_Urdu_Phonetic_kb_v1.1... [OK]<br>
-  > Initializing Rufus_4.6_Module... [OK]
+  > Booting Tariq_Systems v2.0.0...<br>
+  > Rufus 4.6 Link: Verified.<br>
+  > CRULP v1.1 Module: Loaded.
 </div>
 
 <script>
@@ -167,7 +134,7 @@
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth; canvas.height = window.innerHeight;
   let stars = [];
-  for(let i=0; i<400; i++) stars.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*1.2, s: Math.random()*0.4});
+  for(let i=0; i<300; i++) stars.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*1, s: Math.random()*0.3});
   function animate() {
     ctx.fillStyle = "#000205"; ctx.fillRect(0,0,canvas.width, canvas.height);
     ctx.fillStyle = "#fff";
@@ -178,24 +145,6 @@
     requestAnimationFrame(animate);
   }
   animate();
-
-  const term = document.getElementById('term');
-  const logs = [
-    "> Kernel Status: Alhumdulillah.",
-    "> CRULP v1.1 Engine Active.",
-    "> Rufus 4.6 Standby...",
-    "> Encryption Level: RSA-4096.",
-    "> Tariq_Alpha System: Stable."
-  ];
-  let logIdx = 0;
-  setInterval(() => {
-    const div = document.createElement('div');
-    div.innerText = logs[logIdx % logs.length];
-    term.appendChild(div);
-    if(term.childNodes.length > 8) term.removeChild(term.firstChild);
-    logIdx++;
-  }, 3000);
-
   setInterval(() => { document.getElementById('clock').innerText = new Date().toLocaleTimeString(); }, 1000);
 </script>
 
