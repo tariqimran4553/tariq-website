@@ -15,6 +15,7 @@
       --accent: #00ff88;
       --gold: #ffd700;
       --linkedin: #0077b5;
+      --github: #ffffff;
       --glass: rgba(0, 242, 254, 0.05);
     }
 
@@ -56,15 +57,16 @@
     .cyber-card {
       background: var(--glass); border: 1px solid rgba(0, 242, 254, 0.1);
       border-radius: 12px; padding: 25px; transition: 0.3s; backdrop-filter: blur(10px);
+      display: flex; flex-direction: column;
     }
     .cyber-card:hover { border-color: var(--primary); transform: translateY(-5px); }
 
     .btn {
       display: flex; align-items: center; justify-content: center; gap: 8px;
       width: 100%; padding: 12px; background: var(--primary); color: #000;
-      text-decoration: none; border-radius: 5px; font-weight: 900; margin-top: 15px; font-size: 0.75rem;
+      text-decoration: none; border-radius: 5px; font-weight: 900; margin-top: auto; font-size: 0.75rem;
     }
-    .btn.rufus { background: var(--gold); }
+    .btn.github { background: var(--github); color: #000; }
     .btn.urdu { background: var(--accent); }
     .btn.linkedin { background: var(--linkedin); color: #fff; }
 
@@ -83,7 +85,7 @@
 <div class="top-bar">
   <div style="display: flex; align-items: center;">
     <img src="https://raw.githubusercontent.com/tariqimran4553/tariq-website/main/ico.png" alt="Tariq Ico" class="main-ico">
-    <span>TARIQ_IMRAN // V2.1.0</span>
+    <span>TARIQ_IMRAN // V2.1.5</span>
   </div>
   <div id="clock">00:00:00</div>
 </div>
@@ -102,9 +104,13 @@
 
 <div class="container">
   
-  <span class="section-title">Software_Hub</span>
+  <span class="section-title">Development_Vault</span>
   <div class="grid">
- 
+    <div class="cyber-card">
+      <h3 style="color: var(--github);"><i class="fab fa-github"></i> System Source</h3>
+      <p style="opacity: 0.7; font-size: 0.8rem;">View project commits and codebase history for v1.0.0 architecture.</p>
+      <a href="https://github.com/tariqimran4553/tariq-website/commits/v1.0.0" target="_blank" class="btn github">VIEW COMMITS</a>
+    </div>
 
     <div class="cyber-card">
       <h3 style="color: var(--accent);"><i class="fas fa-keyboard"></i> CRULP Urdu v1.1</h3>
@@ -123,7 +129,7 @@
   <div class="grid" style="justify-content: center;">
     <div class="cyber-card" style="max-width: 400px; margin: auto; text-align: center;">
       <h3 style="color: var(--linkedin);"><i class="fab fa-linkedin"></i> LinkedIn Profile</h3>
-      <p style="opacity: 0.7; font-size: 0.8rem;">Connect with Tariq Imran for professional inquiries and system development projects.</p>
+      <p style="opacity: 0.7; font-size: 0.8rem;">Professional inquiries and system development projects.</p>
       <a href="https://www.linkedin.com/in/tariq-imran-8966b6310" target="_blank" class="btn linkedin">OPEN LINKEDIN</a>
     </div>
   </div>
@@ -131,8 +137,8 @@
 </div>
 
 <div class="terminal-window" id="term">
-  > Booting Systems v2.1.0...<br>
-  > YouTube Module: Purged.<br>
+  > Booting Systems v2.1.5...<br>
+  > GitHub Trace: v1.0.0 Commits Linked.<br>
   > LinkedIn Protocol: Active.<br>
   > Status: Alhumdulillah.
 </div>
