@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TARIQ IMRAN | Systems Developer v2.0.0</title>
+  <title>TARIQ IMRAN | Systems Developer</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,35 +14,43 @@
       --primary: #00f2fe;
       --accent: #00ff88;
       --gold: #ffd700;
+      --yt-red: #ff0000;
       --glass: rgba(0, 242, 254, 0.05);
     }
 
     * { box-sizing: border-box; cursor: crosshair; }
     body { margin: 0; font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); color: #fff; overflow-x: hidden; }
-    canvas#galaxy { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.6; }
+    canvas#galaxy { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.5; }
 
+    /* --- TOP NAVIGATION --- */
     .top-bar {
       position: fixed; top: 0; width: 100%; height: 60px;
-      background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--primary);
+      background: rgba(0,0,0,0.95); border-bottom: 1px solid var(--primary);
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 30px; z-index: 1000; font-family: 'Fira Code'; font-size: 0.7rem;
     }
-    .main-ico { width: 32px; height: 32px; border-radius: 4px; border: 1px solid var(--primary); margin-right: 12px; object-fit: cover; }
+    .main-ico { width: 32px; height: 32px; border-radius: 4px; border: 1px solid var(--primary); margin-right: 12px; }
 
-    .islamic-header { margin-top: 100px; text-align: center; padding: 25px; border-bottom: 1px solid rgba(255, 215, 0, 0.1); }
+    /* --- HERO SECTION --- */
+    .islamic-header { margin-top: 100px; text-align: center; padding: 20px; }
     .ayat { font-family: 'Amiri', serif; font-size: 2.2rem; color: var(--gold); }
-
-    header { padding: 40px 20px; text-align: center; }
+    
+    header { padding: 30px 20px; text-align: center; }
     .neon-circle {
-      width: 170px; height: 170px; margin: auto; border-radius: 50%;
+      width: 160px; height: 160px; margin: auto; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       background: #000; box-shadow: 0 0 40px var(--primary);
-      animation: pulse 2s infinite alternate;
     }
-    .profile-img { width: 155px; height: 155px; border-radius: 50%; object-fit: cover; }
-    @keyframes pulse { from { box-shadow: 0 0 20px var(--primary); } to { box-shadow: 0 0 50px var(--accent); } }
+    .profile-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; }
 
-    .container { max-width: 1200px; margin: auto; padding: 20px 20px 100px; }
+    .section-title {
+        text-align: center; letter-spacing: 10px; color: var(--primary);
+        margin: 50px 0 30px; font-size: 1.2rem; text-transform: uppercase;
+        border-bottom: 1px solid rgba(0, 242, 254, 0.2); display: block; width: fit-content; margin-inline: auto; padding-bottom: 10px;
+    }
+
+    /* --- SOFTWARE GRID --- */
+    .container { max-width: 1200px; margin: auto; padding: 0 20px 100px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 
     .cyber-card {
@@ -54,17 +62,28 @@
     .btn {
       display: flex; align-items: center; justify-content: center; gap: 8px;
       width: 100%; padding: 12px; background: var(--primary); color: #000;
-      text-decoration: none; border-radius: 5px; font-weight: 900; margin-top: 15px; font-size: 0.75rem; transition: 0.3s;
+      text-decoration: none; border-radius: 5px; font-weight: 900; margin-top: 15px; font-size: 0.75rem;
     }
-    .btn:hover { filter: brightness(1.2); box-shadow: 0 0 15px currentColor; }
     .btn.rufus { background: var(--gold); }
     .btn.urdu { background: var(--accent); }
 
+    /* --- YOUTUBE DEDICATED SECTION --- */
+    .youtube-section {
+        max-width: 900px; margin: 40px auto; background: rgba(255, 0, 0, 0.02);
+        border: 1px solid rgba(255, 0, 0, 0.2); border-radius: 20px; padding: 30px;
+        text-align: center; backdrop-filter: blur(10px);
+    }
+    .yt-container {
+        position: relative; width: 100%; padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+        height: 0; overflow: hidden; border-radius: 10px; border: 2px solid #333; margin-top: 20px;
+    }
+    .yt-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
     .terminal-window {
-      position: fixed; bottom: 20px; right: 20px; width: 320px; height: 160px;
+      position: fixed; bottom: 20px; right: 20px; width: 300px; height: 150px;
       background: rgba(0,0,0,0.9); border: 1px solid var(--accent);
-      border-radius: 10px; padding: 15px; font-family: 'Fira Code'; font-size: 0.65rem;
-      color: var(--accent); overflow: hidden; pointer-events: none;
+      border-radius: 10px; padding: 15px; font-family: 'Fira Code'; font-size: 0.6rem;
+      color: var(--accent); pointer-events: none; z-index: 1001;
     }
   </style>
 </head>
@@ -75,7 +94,7 @@
 <div class="top-bar">
   <div style="display: flex; align-items: center;">
     <img src="https://raw.githubusercontent.com/tariqimran4553/tariq-website/main/ico.png" alt="Tariq Ico" class="main-ico">
-    <span>TARIQ_IMRAN // V2.0.0_STABLE</span>
+    <span>TARIQ_IMRAN // V2.1.0</span>
   </div>
   <div id="clock">00:00:00</div>
 </div>
@@ -88,36 +107,48 @@
   <div class="neon-circle">
     <img src="profile.jpg" alt="Tariq Imran" class="profile-img">
   </div>
-  <h1 style="font-size: 4rem; letter-spacing: -4px; margin: 25px 0 5px; color: #fff;">TARIQ IMRAN</h1>
-  <p style="color: var(--primary); letter-spacing: 6px; font-size: 0.85rem;">[ SYSTEMS DEVELOPER ]</p>
+  <h1 style="font-size: 3.5rem; letter-spacing: -3px; margin: 20px 0 5px;">TARIQ IMRAN</h1>
+  <p style="color: var(--primary); letter-spacing: 5px; font-size: 0.8rem;">[ SYSTEMS DEVELOPER ]</p>
 </header>
 
 <div class="container">
+  
+  <span class="section-title">Software_Hub</span>
   <div class="grid">
     <div class="cyber-card">
       <h3 style="color: var(--gold);"><i class="fas fa-compact-disc"></i> Rufus 4.6</h3>
-      <p style="opacity: 0.7; font-size: 0.85rem;">Bootable USB Tool. Latest Release Asset.</p>
-      <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v3.tk/rufus-4.6.exe" class="btn rufus">DOWNLOAD RUFUS.EXE</a>
+      <p style="opacity: 0.7; font-size: 0.8rem;">Official bootable USB creator. Stable build from v3.tk release.</p>
+      <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v3.tk/rufus-4.6.exe" class="btn rufus">DOWNLOAD EXE</a>
     </div>
 
     <div class="cyber-card">
-      <h3 style="color: var(--accent);"><i class="fas fa-keyboard"></i> Urdu Phonetic v1.1</h3>
-      <p style="opacity: 0.7; font-size: 0.85rem;">CRULP_Urdu_Phonetic_kb_v1.1.7z (Release Asset)</p>
-      <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v3.tk/CRULP_Urdu_Phonetic_kb_v1.1.7z" class="btn urdu">DOWNLOAD 7Z SETUP</a>
+      <h3 style="color: var(--accent);"><i class="fas fa-keyboard"></i> CRULP Urdu v1.1</h3>
+      <p style="opacity: 0.7; font-size: 0.8rem;">CRULP_Urdu_Phonetic_kb_v1.1.7z - Release v3.tk asset.</p>
+      <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v3.tk/CRULP_Urdu_Phonetic_kb_v1.1.7z" class="btn urdu">GET 7Z SETUP</a>
     </div>
 
     <div class="cyber-card">
       <h3 style="color: var(--primary);"><i class="fas fa-play"></i> Media Engine</h3>
-      <p style="opacity: 0.7; font-size: 0.85rem;">Core Video Renderer APK.</p>
-      <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v1.0.0/tariq_media_player.apk" class="btn">GET APK</a>
+      <p style="opacity: 0.7; font-size: 0.8rem;">Custom UHD Video Renderer for Android mobile systems.</p>
+      <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v1.0.0/tariq_media_player.apk" class="btn">DOWNLOAD APK</a>
     </div>
   </div>
+
+  <span class="section-title">Media_Broadcasting</span>
+  <div class="youtube-section">
+      <h2 style="color: var(--yt-red); margin: 0;"><i class="fab fa-youtube"></i> YouTube Lab</h2>
+      <p style="opacity: 0.6; font-size: 0.9rem;">Professional Tutorials & Project Showcases</p>
+      <div class="yt-container">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  </div>
+
 </div>
 
 <div class="terminal-window" id="term">
-  > Booting Tariq_Kernel v2.0.0...<br>
-  > Link Mode: RELEASE_ASSETS (v3.tk)<br>
-  > Assets Verified. No more 404.<br>
+  > Booting Systems v2.1.0...<br>
+  > Releases: Synchronized.<br>
+  > YouTube Section: Dedicated.<br>
   > Status: Alhumdulillah.
 </div>
 
