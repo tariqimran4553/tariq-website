@@ -19,10 +19,8 @@
 
     * { box-sizing: border-box; cursor: crosshair; }
     body { margin: 0; font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); color: #fff; overflow-x: hidden; }
-
     canvas#galaxy { position: fixed; top: 0; left: 0; z-index: -1; opacity: 0.6; }
 
-    /* --- TOP BAR --- */
     .top-bar {
       position: fixed; top: 0; width: 100%; height: 60px;
       background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--primary);
@@ -31,14 +29,9 @@
     }
     .main-ico { width: 32px; height: 32px; border-radius: 4px; border: 1px solid var(--primary); margin-right: 12px; object-fit: cover; }
 
-    /* --- ISLAMIC HEADER --- */
-    .islamic-header {
-      margin-top: 100px; text-align: center; padding: 25px;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-    }
+    .islamic-header { margin-top: 100px; text-align: center; padding: 25px; border-bottom: 1px solid rgba(255, 215, 0, 0.1); }
     .ayat { font-family: 'Amiri', serif; font-size: 2.2rem; color: var(--gold); }
 
-    /* --- PROFILE --- */
     header { padding: 40px 20px; text-align: center; }
     .neon-circle {
       width: 170px; height: 170px; margin: auto; border-radius: 50%;
@@ -49,7 +42,6 @@
     .profile-img { width: 155px; height: 155px; border-radius: 50%; object-fit: cover; }
     @keyframes pulse { from { box-shadow: 0 0 20px var(--primary); } to { box-shadow: 0 0 50px var(--accent); } }
 
-    /* --- GRID --- */
     .container { max-width: 1200px; margin: auto; padding: 20px 20px 100px; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
 
@@ -83,14 +75,13 @@
 <div class="top-bar">
   <div style="display: flex; align-items: center;">
     <img src="https://raw.githubusercontent.com/tariqimran4553/tariq-website/main/ico.png" alt="Tariq Ico" class="main-ico">
-    <span>TARIQ_IMRAN // V2.0.0_LATEST</span>
+    <span>TARIQ_IMRAN // V2.0.0_STABLE</span>
   </div>
   <div id="clock">00:00:00</div>
 </div>
 
 <div class="islamic-header">
     <div class="ayat">إِنَّ ٱللَّهَ مَعَ ٱلصَّـٰبِرِينَ</div>
-    <div class="terjma">"Beshak Allah Sabr karne walon ke saath hai."</div>
 </div>
 
 <header>
@@ -105,29 +96,28 @@
   <div class="grid">
     <div class="cyber-card">
       <h3 style="color: var(--gold);"><i class="fas fa-compact-disc"></i> Rufus 4.6</h3>
-      <p style="opacity: 0.7; font-size: 0.85rem;">Bootable USB Creator. Latest Release Asset.</p>
+      <p style="opacity: 0.7; font-size: 0.85rem;">Bootable USB Tool. Latest Release Asset.</p>
       <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v3.tk/rufus-4.6.exe" class="btn rufus">DOWNLOAD RUFUS.EXE</a>
     </div>
 
     <div class="cyber-card">
       <h3 style="color: var(--accent);"><i class="fas fa-keyboard"></i> Urdu Phonetic v1.1</h3>
-      <p style="opacity: 0.7; font-size: 0.85rem;">CRULP_Urdu_Phonetic_kb_v1.1.7z (12.6 MB)</p>
-      <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v3.tk/CRULP_Urdu_Phonetic_kb_v1.1.7z" class="btn urdu">DOWNLOAD 7Z ARCHIVE</a>
+      <p style="opacity: 0.7; font-size: 0.85rem;">CRULP_Urdu_Phonetic_kb_v1.1.7z (Release Asset)</p>
+      <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v3.tk/CRULP_Urdu_Phonetic_kb_v1.1.7z" class="btn urdu">DOWNLOAD 7Z SETUP</a>
     </div>
 
     <div class="cyber-card">
       <h3 style="color: var(--primary);"><i class="fas fa-play"></i> Media Engine</h3>
-      <p style="opacity: 0.7; font-size: 0.85rem;">NDK Video Renderer Core.</p>
-      <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v1.0.0/tariq_media_player.apk" class="btn">DOWNLOAD APK</a>
+      <p style="opacity: 0.7; font-size: 0.85rem;">Core Video Renderer APK.</p>
+      <a href="https://github.com/tariqimran4553/tariq-website/releases/download/v1.0.0/tariq_media_player.apk" class="btn">GET APK</a>
     </div>
   </div>
 </div>
 
 <div class="terminal-window" id="term">
-  > Booting Tariq_Systems v2.0.0...<br>
-  > Release Tag: [v3.tk] Detected.<br>
-  > Rufus Asset: Synchronized.<br>
-  > Urdu_Phonetic_7z: Verified.<br>
+  > Booting Tariq_Kernel v2.0.0...<br>
+  > Link Mode: RELEASE_ASSETS (v3.tk)<br>
+  > Assets Verified. No more 404.<br>
   > Status: Alhumdulillah.
 </div>
 
